@@ -17,7 +17,7 @@ name = input('Введите Ваше имя: ')
 second_name = input('Введите Вашу фамилию: ')
 age = int(input('Введите Ваш возраст: '))
 weight = int(input('Введите Ваш вес: '))
-if weight > 50 and weight < 120:
+if 50 < weight < 120:
     print(name, second_name + ',', age, 'год, вес', weight, '- хорошее состояние')
 elif age < 30:
     print(name, second_name + ',', age, 'год, вес', weight, '- это подозрительно')
