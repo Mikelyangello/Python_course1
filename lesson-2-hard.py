@@ -30,47 +30,42 @@ print('\n_________________________________________\n')
 
 while True:
     user_date = input('Введите дату в формате dd.mm.yyyy:\n').split('.')
-    example2 = []
-    example3 = []
-    true_false = 0
+    dlina_elementov_daty = []
+    user_data_int_list = []
+    true_counter = 0
 
     for i in user_date:
         if i.isdigit():
-            example2.append(len(i))
-            example3.append(int(i))
+            dlina_elementov_daty.append(len(i))
+            user_data_int_list.append(int(i))
 
-    if len(user_date) == 3 and example2 == [2, 2, 4]:
+    if len(user_date) == 3 and dlina_elementov_daty == [2, 2, 4]:
 
-        if example3[1] in [1, 5, 7, 8, 10, 12]:
-            for j in example3:
-                if 1 <= j <= [31, 12, 9999][example3.index(j)]:
-                    true_false += 1
+        if user_data_int_list[1] in [1, 5, 7, 8, 10, 12]:
+            for j in user_data_int_list:
+                if 1 <= j <= [31, 12, 9999][user_data_int_list.index(j)]:
+                    true_counter += 1
 
-        elif example3[1] == 2 and example3[2] % 4 == 0:
-            for j in example3:
-                if 1 <= j <= [29, 12, 9999][example3.index(j)]:
-                    true_false += 1
+        elif user_data_int_list[1] == 2 and user_data_int_list[2] % 4 == 0:
+            for j in user_data_int_list:
+                if 1 <= j <= [29, 12, 9999][user_data_int_list.index(j)]:
+                    true_counter += 1
 
-        elif example3[1] == 2:
-            for j in example3:
-                if 1 <= j <= [28, 12, 9999][example3.index(j)]:
-                    true_false += 1
+        elif user_data_int_list[1] == 2:
+            for j in user_data_int_list:
+                if 1 <= j <= [28, 12, 9999][user_data_int_list.index(j)]:
+                    true_counter += 1
 
         else:
-            for j in example3:
-                if 1 <= j <= [30, 12, 9999][example3.index(j)]:
-                    true_false += 1
+            for j in user_data_int_list:
+                if 1 <= j <= [30, 12, 9999][user_data_int_list.index(j)]:
+                    true_counter += 1
 
-        if true_false == 3:
+        if true_counter == 3:
             print('Наконец-то верный ввод. Спасибо!')
             break
 
     print('Неверный ввод. Повторите попытку.')
-
-
-for i in user_date:
-    if i.isdigit():
-        example2.append(int(i))
 
 print('\n_________________________________________\n')
 
@@ -113,20 +108,20 @@ date = '-2.10.3001'
 # Вход: 11
 # Выход: 5 3
 
-room = int(input('Введите номер интересующей Вас комнаты (диапазон 1 - 2 000 000 000):\n'))
-i = 0
-n = 0
-rooms_count = 0
+user_room = int(input('Введите номер интересующей Вас комнаты (диапазон 1 - 2 000 000 000):\n'))
+block_number = 0
+stages_of_building = 0
+rooms_counter = 0
 
 while True:
-    i += 1
-    n += i
-    rooms_count += i ** 2
-    if rooms_count >= room:
+    block_number += 1
+    stages_of_building += block_number
+    rooms_counter += block_number ** 2
+    if rooms_counter >= user_room:
         break
 
-delta = rooms_count - room
-stage = n - delta // i
-counter = i - (delta - (n - stage) * i)
+delta = rooms_counter - user_room
+stage = stages_of_building - delta // block_number
+room_on_the_stage = block_number - (delta - (stages_of_building - stage) * block_number)
 
-print('Ваша комната №{} находится на {} этаже, {} слева'.format(room, stage, counter))
+print('Ваша комната №{} находится на {} этаже, {} слева'.format(user_room, stage, room_on_the_stage))

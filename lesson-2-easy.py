@@ -30,7 +30,7 @@ words = ['example1', 'mommy', 2, 'daddy', 'sister', 'brother', (1, 2, 3), 'examp
 words2 = ['mama', 2, 'papa', (1, 2, 3), 'example1', 'daddy']
 
 for i in words2:
-    while words2.count(i) > 0 and words.count(i) > 0:
+    while words.count(i) > 0:
         words.pop(words.index(i))
 
 print(words)
@@ -43,10 +43,10 @@ print('\n_________________________________________\n')
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
 
 
-numbers = [10, 2, 7, 9, -15, 0, 4, 5, 32, 17, 11, 14]
+numbers_list = [10, 2, 7, 9, -15, 0, 4, 5, 32, 17, 11, 14]
 result = []
 
-for i in numbers:
+for i in numbers_list:
     if i % 2 == 0:
         result.append(i / 4)
     else:
