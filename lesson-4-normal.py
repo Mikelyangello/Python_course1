@@ -64,7 +64,7 @@ some_str = '''
 Леса, недавно столь густые,
 И берег, милый для меня.'''
 
-pattern_poem = '\.\.'
+pattern_poem = '\.{2:}'
 
 if re.search(pattern_poem, some_str) is None:
     print('В тексте:\n{}\n\n\nНЕ ВСТРЕЧАЮТСЯ 2 или более точки, идущие подряд'.format(some_str))
