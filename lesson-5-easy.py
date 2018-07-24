@@ -56,7 +56,7 @@ def make_a_copy_work_file():
 def view_dirs():
     # функция просмотра содержимого папки, где запущен скрипт
     print('\nСодержимое каталога:')
-    [print('{}'.format(i)) for i in sorted(os.listdir(os.getcwd()))]
+    [print('{}'.format(i)) for i in sorted(os.listdir(os.getcwd())) if os.path.isdir(i)]
     print()
     under_menu()
 
